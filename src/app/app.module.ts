@@ -13,6 +13,7 @@ import { ServerComponent } from './servers/server/server.component';
 import { UserComponent } from './users/user/user.component';
 
 import { ServersService } from './servers/servers.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 //localhost:4200/users
 const appRoutes : Routes = [
@@ -26,7 +27,10 @@ const appRoutes : Routes = [
   {path : 'users' ,component : UsersComponent ,children:[
   {path : ':id/:name' ,component : UserComponent}  
   ]},
-  {path: 'edit',component : EditServerComponent }
+  {path: 'edit',component : EditServerComponent },
+  {path: 'not-found' ,component : PageNotFoundComponent},
+  //Using wild card routes.Note that it is last route as it matches all the not found routes
+  {path: '**' , redirectTo:'/not-found' }
 ];
 
 @NgModule({
@@ -38,6 +42,7 @@ const appRoutes : Routes = [
     EditServerComponent,
     ServerComponent,
     UserComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
