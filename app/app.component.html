@@ -1,0 +1,32 @@
+ <div class="containe-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-12 col-sm-offset-1 col-md-offset-2">
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="width:vw">
+          <!-- Brand/logo -->
+          <a class="navbar-brand" href="#">Logo</a>
+
+          <!-- Links -->
+          <ul class="navbar-nav">
+              <!-- routerLinkActive ="active" --to dynamically add the css class on the current active route -->
+              <li class="nav-item"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]=" {exact:true} "> <!-- Only add the css class to the current active link -->
+              <a class="nav-link"  routerLink="/">Link 1</a>
+              </li>
+              <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="/servers">Link 2</a>
+              </li>
+              <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/users']">Link 3</a>
+              </li>
+          </ul>
+    </nav>
+  </div>
+  </div>
+  <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2" style="margin:50px 50px;">
+            <router-outlet></router-outlet>
+        </div>
+  </div>
+</div>
+
