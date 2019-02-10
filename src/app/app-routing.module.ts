@@ -9,12 +9,12 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { UserComponent } from './users/user/user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { AuthGuardService } from './auth-guard.service';
 //localhost:4200/users
 const routes: Routes = [
   {path : '' ,component : HomeComponent },
   
-  {path : 'servers' ,component : ServersComponent,children:[ 
+  {path : 'servers' ,canActivate:[AuthGuardService] ,component : ServersComponent,children:[ 
     {path : ':id' , component : ServerComponent },
     {path : ':id/edit' ,component : EditServerComponent }
   ]},
