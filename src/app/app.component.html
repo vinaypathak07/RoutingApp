@@ -23,10 +23,13 @@
     </nav>
   </div>
   </div>
-  <div class="row">
+  <div  *ngIf="!loading" class="row">
         <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2" style="margin:50px 50px;">
             <router-outlet></router-outlet>
         </div>
   </div>
+  <div style="margin-top:32px;text-align:center;" *ngIf="loading">
+    <object type="image/svg+xml" data="assets/oval.svg" width="5%">Loader</object>
+</div>
 </div>
 

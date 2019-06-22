@@ -22,7 +22,7 @@ import { ServerResolver } from './servers/server/server-resolver.service';
 
 //localhost:4200/users
 const appRoutes : Routes = [
-  {path : '' ,component : HomeComponent },
+  {path : '' ,component : HomeComponent,pathMatch:'full' },
   
   {path : 'servers' ,
   // canActivate : [AuthGuardService],
